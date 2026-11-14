@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2C99D6" />
+  <meta name="description" content="Demo interaktif ANOA, konsep platform Smart Hospital AIoT untuk Sulawesi Tenggara." />
+  <title>ANOA — Smart Hospital AIoT | Demo Interaktif</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a href="#beranda" class="brand" id="brandHome" aria-label="ANOA — kembali ke beranda">
+        <span class="brand-mark" aria-hidden="true"><span class="brand-plus">+</span><span class="brand-swoosh"></span></span>
+        <span class="brand-name">ANOA</span>
+        <span class="brand-divider"></span>
+        <span class="brand-tag">Smart Hospital <strong>AIoT</strong></span>
+      </a>
+      <div class="top-actions">
+        <span class="prototype-pill"><span class="dot"></span> PROTOTIPE INTERAKTIF</span>
+        <div class="view-toggle" role="group" aria-label="Pilih mode demo">
+          <button type="button" class="mode-btn active" data-mode="admin" aria-pressed="true">Dashboard RS</button>
+          <button type="button" class="mode-btn" data-mode="patient" aria-pressed="false">Portal Pasien</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="beranda" class="page-container">
+      <div class="intro-row">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> SULAWESI TENGGARA · WILAYAH PERCONTOHAN KONSEPTUAL</p>
+          <h1>Pelayanan lebih cerdas.<br><em>Akses lebih setara.</em></h1>
+          <p class="lede">Satu ekosistem untuk antrean pasien, kehadiran dokter, pemantauan operasional, dan integrasi data kesehatan.</p>
+        </div>
+        <div class="intro-side">
+          <div class="date-chip" id="currentDate">WITA · Demo</div>
+          <div class="live-chip"><span class="pulse-dot"></span> Data simulasi aktif</div>
+        </div>
+      </div>
+
+      <section class="workspace" aria-label="Demo aplikasi ANOA">
+        <div id="adminMode" class="dashboard-layout">
+          <aside class="sidebar">
+            <div class="side-hospital"><span class="side-hospital-icon">✚</span><div><strong>ANOA Command Center</strong><small>RSUD Percontohan · Demo</small></div></div>
+            <div class="nav-caption">MENU OPERASIONAL</div>
+            <nav id="adminNav" aria-label="Menu dashboard">
+              <button class="nav-item active" data-page="overview"><span class="nav-symbol">▦</span> Ringkasan</button>
+              <button class="nav-item" data-page="queue"><span class="nav-symbol">◷</span> Antrean & Jadwal</button>
+              <button class="nav-item" data-page="doctors"><span class="nav-symbol">✚</span> Kehadiran Dokter</button>
+              <button class="nav-item" data-page="monitor"><span class="nav-symbol">♡</span> Monitoring Pasien</button>
+              <button class="nav-item" data-page="bpjs"><span class="nav-symbol">▣</span> Kuota BPJS</button>
+              <button class="nav-item" data-page="integration"><span class="nav-symbol">⇆</span> Integrasi & RME</button>
+              <button class="nav-item" data-page="analytics"><span class="nav-symbol">▥</span> Analitik & Laporan</button>
+            </nav>
+            <div class="sidebar-bottom"><div class="tiny-star">✧</div><strong>Smart Hospital</strong><p>IoT → AI → Integrasi → Akses Pasien</p><span>Konsep ANOA · 2026</span></div>
+          </aside>
+
+          <div class="dashboard-main">
+            <div class="panel-heading">
+              <div><p class="tiny-label">PUSAT KENDALI RUMAH SAKIT</p><h2 id="adminPageTitle">Dashboard Operasional</h2><p id="adminPageSubtitle" class="panel-subtitle">Pantau layanan dan sumber daya melalui satu tampilan terpadu.</p></div>
+              <button id="refreshBtn" class="outline-btn" type="button"><span aria-hidden="true">↻</span> Segarkan Simulasi</button>
+            </div>
+            <div id="adminContent" class="admin-content" aria-live="polite"></div>
+          </div>
+          <aside class="phone-rail" aria-label="Pratinjau aplikasi pasien">
+            <div class="rail-heading"><div><span class="tiny-label">PATIENT EXPERIENCE</span><h3>Aplikasi Pasien</h3></div><span class="rail-live">● LIVE DEMO</span></div>
+            <div class="phone"><div class="phone-camera"></div><div class="phone-screen">
+              <div class="phone-header"><div class="phone-top-row"><span>09:41</span><span>▰ ◖◖ ▣</span></div><div class="phone-brand"><span>✚ ANOA</span><span>♧</span></div><div class="phone-greeting">Halo, <strong id="phoneGreeting">Pasien Demo</strong> 👋<small>Selamat datang di layanan kesehatan cerdas</small></div></div>
+              <div class="phone-body"><div class="phone-feature-grid"><button data-phone="register"><span>▣</span>Daftar Online</button><button data-phone="doctors"><span>♙</span>Pilih Dokter</button><button data-phone="queue"><span>◷</span>Antrean</button><button data-phone="bpjs"><span>▤</span>Kuota BPJS</button></div>
+              <div class="mini-ticket"><div class="ticket-label">TIKET ANTREAN</div><div class="ticket-number" id="phoneTicket">A-028</div><div id="phonePoli">Poli Umum</div><div class="ticket-divider"></div><span>Estimasi tunggu</span><strong id="phoneWait">± 24 menit</strong></div>
+              <div class="phone-alert"><span>◉</span><div><b id="phoneAlertTitle">Jadwal dokter terverifikasi</b><small id="phoneAlertText">Pembaruan antrean tersedia secara langsung.</small></div></div>
+              </div><div class="phone-footer"><button class="selected" data-phone="home">⌂<small>Beranda</small></button><button data-phone="queue">▦<small>Antrean</small></button><button data-phone="doctors">♙<small>Dokter</small></button><button data-mode="patient">→<small>Buka</small></button></div>
+            </div></div>
+            <p class="rail-note">Klik fitur pada ponsel untuk membuka portal pasien interaktif.</p>
+          </aside>
+        </div>
+
+        <div id="patientMode" class="patient-layout" hidden>
+          <div class="patient-side"><span class="portal-icon">✚</span><span class="tiny-label white">PORTAL PASIEN ANOA</span><h2>Perawatan dimulai dari akses yang mudah.</h2><p>Pilih dokter, daftar layanan, dan pantau antrean tanpa kebingungan.</p><div class="patient-illustration"><div class="ill-heart">♡</div><div class="ill-card"><span>◷ Antrean digital</span><strong id="patientSideTicket">A-028</strong><small>Informasi diperbarui dari simulasi</small></div></div><p class="side-footnote">Akses inklusif · Siap dikembangkan untuk wilayah kepulauan</p></div>
+          <div class="patient-main"><div class="patient-page-header"><div><p class="tiny-label">SELAMAT DATANG</p><h2>Halo, <span id="patientGreeting">Pasien Demo</span> 👋</h2><p>Kelola kunjungan rumah sakit dengan lebih praktis.</p></div><button class="outline-btn" data-mode="admin">← Dashboard RS</button></div>
+          <div class="patient-nav" aria-label="Menu portal pasien"><button class="patient-tab active" data-tab="home">Beranda</button><button class="patient-tab" data-tab="register">Daftar Online</button><button class="patient-tab" data-tab="doctors">Pilih Dokter</button><button class="patient-tab" data-tab="queue">Pantau Antrean</button><button class="patient-tab" data-tab="bpjs">Kuota BPJS</button></div>
+          <div id="patientContent" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="architecture" aria-label="Empat komponen arsitektur ANOA">
+        <div class="arch-title"><div><p class="tiny-label">CARA KERJA ANOA</p><h2>Empat komponen. Satu layanan terhubung.</h2></div><span class="arch-badge">Arsitektur Konseptual</span></div>
+        <div class="arch-grid">
+          <div class="arch-card"><div class="arch-icon">⌁</div><span>01</span><h3>IoT Layer</h3><p>Perangkat sensor, data antrean, tempat tidur, dan kehadiran dokter.</p></div>
+          <div class="arch-card"><div class="arch-icon">✳</div><span>02</span><h3>AI Layer</h3><p>Prediksi kebutuhan layanan dan analitik pendukung keputusan.</p></div>
+          <div class="arch-card"><div class="arch-icon">⇆</div><span>03</span><h3>Integration Layer</h3><p>Rancangan interoperabilitas RME, SATUSEHAT, dan BPJS.</p></div>
+          <div class="arch-card"><div class="arch-icon red-icon">▯</div><span>04</span><h3>Patient App</h3><p>Daftar online, jadwal aktual, status antrean, dan pemberitahuan.</p></div>
+        </div>
+      </section>
+      <footer><span><strong>ANOA</strong> · Autonomous Intelligence for Next-generation Healthcare Operations and Patient Access</span><span>Prototipe riset · Bukan sistem layanan kesehatan aktif</span></footer>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>
